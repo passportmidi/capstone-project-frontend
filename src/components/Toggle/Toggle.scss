@@ -1,0 +1,24 @@
+@use "./../../styles/partials/global" as *;
+
+.toggle__input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  background: white;
+  color: black;
+  font-size: 14px;
+  transition: all 100ms linear;
+  &:checked {
+    background-color: black;
+    color: white;
+  }
+  &:before {
+    content: attr(label);
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+  }
+}
