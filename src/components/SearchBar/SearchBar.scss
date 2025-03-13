@@ -1,0 +1,7 @@
+@use "./../../styles/partials/global" as *;
+input {
+    background-image: url("../../assets/images/ic--baseline-search.svg");
+    background-repeat: no-repeat;
+    background-position: right center;
+    width: 10rem;
+}

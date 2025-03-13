@@ -1,10 +1,11 @@
-import searchIcon from "../src/assets/images/ic--baseline-search.svg";
 import Table from "./components/Table/Table";
+import SearchBar from "./components/SearchBar/SearchBar";
 
 function App() {
   return (
     <>
       <h1>Ingredient Weight Calculator</h1>
+      <SearchBar />
       <Table />
     </>
   );
