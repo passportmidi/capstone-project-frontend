@@ -1,7 +1,6 @@
-import "./SearchBar.scss";
 import { useState } from "react";
 
-export default function SearchBar() {
+export default function AmountInput() {
   const [input, setInput] = useState("");
 
   const handleChange = (value) => {
@@ -9,12 +8,12 @@ export default function SearchBar() {
     console.log(input);
   };
   return (
-    <div className="search__wrapper">
-      <label className="search__label">
-        Ingredient:
+    <div className="amount__wrapper">
+      <label className="amount__label">
+        Amount:
         <input
-          className="search__input"
-          placeholder="Search for ingredient..."
+          className="amount__input"
+          placeholder="Enter amount"
           value={input}
           onChange={(e) => handleChange(e.target.value)}
         />
