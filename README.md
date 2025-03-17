@@ -126,7 +126,7 @@ Response:
 ]
 ```
 
-**PUT /ingredients/:id**
+**PATCH /ingredients/:id**
 
 - Edit an ingredient
 
