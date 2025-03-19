@@ -37,11 +37,13 @@ export default function Table() {
         </tr>
       </thead>
       <tbody>
+        {/* map ingredients from database to table */}
         {ingredients.map((ingredient) => {
           return (
             <tr key={ingredient.id}>
               <td>
                 {ingredient.name}
+                {/* if it's a custom ingredient, add edit and delete buttons */}
                 {ingredient.custom === 1 && (
                   <>
                     <img src={editIcon} alt="Edit" />
