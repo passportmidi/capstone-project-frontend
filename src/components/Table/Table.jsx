@@ -37,20 +37,6 @@ export default function Table() {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>All-Purpose Flour</td>
-          <td>1 cup</td>
-          <td>120g</td>
-        </tr>
-        <tr>
-          <td>
-            Custom ingredient
-            <img src={editIcon} alt="Edit" />
-            <img src={deleteIcon} alt="Delete" />
-          </td>
-          <td>1 cup</td>
-          <td>150g</td>
-        </tr>
         {ingredients.map((ingredient) => {
           return (
             <tr key={ingredient.id}>
@@ -64,7 +50,7 @@ export default function Table() {
                 )}
               </td>
               <td>{ingredient.volume}</td>
-              <td>{ingredient.grams}</td>
+              <td>{ingredient.grams}g</td>
             </tr>
           );
         })}
