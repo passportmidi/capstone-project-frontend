@@ -162,19 +162,19 @@ Response: 200 OK
 
 <!-- Scope your project as a sprint. Break down the tasks that will need to be completed and map out timeframes for implementation working back from the capstone due date. -->
 
-- Create client
+- Create client ✓
 
-  - react project with routes and boilerplate pages
+  - react project with routes and boilerplate pages ✓
 
 - Create server
 
-  - express project with routing, with placeholder 200 responses
+  - express project with routing, with placeholder 200 responses ✓
 
-- Create migrations
+- Create migrations ✓
 
-- Create seed with ingredient weight chart data
+- Create seed with ingredient weight chart data ✓
 
-- Feature: Search by ingredient
+- Feature: Search by ingredient ✓
 
 - Feature: Enter grams
 
