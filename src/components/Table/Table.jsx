@@ -5,17 +5,21 @@ import { useEffect, useState } from "react";
 
 const BASE_URL = import.meta.env.VITE_API_URL;
 
-export default function Table() {
+export default function Table({ filter }) {
   const [ingredients, setIngredients] = useState(null);
 
   useEffect(() => {
     fetchIngredients();
-  }, []);
+  }, [{ filter }]);
 
   async function fetchIngredients() {
     try {
       const { data } = await axios.get(`${BASE_URL}/ingredients`);
-      setIngredients(data);
+      const filteredData = data.filter((ingredient) =>
+        ingredient.name.toLowerCase().includes(filter.toLowerCase())
+      );
+      // TODO: maybe add function to filter on volume/weight here
+      setIngredients(filteredData);
     } catch (e) {
       console.log("Error fetching ingredients:", e);
     }
