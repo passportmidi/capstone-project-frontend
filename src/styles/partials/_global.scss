@@ -1,7 +1,10 @@
+@use "typography" as *;
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  @include hind-regular;
 }
 
 input:not([type="radio"]) {
