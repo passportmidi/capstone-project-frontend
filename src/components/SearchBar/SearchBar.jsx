@@ -1,5 +1,4 @@
 import "./SearchBar.scss";
-import { useState } from "react";
 
 export default function SearchBar({ setInput }) {
   return (

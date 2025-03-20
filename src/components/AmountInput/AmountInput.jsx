@@ -1,12 +1,4 @@
-import { useState } from "react";
-
-export default function AmountInput() {
-  const [input, setInput] = useState("");
-
-  const handleChange = (value) => {
-    setInput(value);
-    console.log(input);
-  };
+export default function AmountInput({ setAmount }) {
   return (
     <div className="amount__wrapper">
       <label className="amount__label">
@@ -14,8 +6,7 @@ export default function AmountInput() {
         <input
           className="amount__input"
           placeholder="Enter amount"
-          value={input}
-          onChange={(e) => handleChange(e.target.value)}
+          onChange={(e) => setAmount(e.target.value)}
         />
       </label>
     </div>

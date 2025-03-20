@@ -7,14 +7,15 @@ import Toggle from "./components/Toggle/Toggle";
 
 function App() {
   const [input, setInput] = useState("");
+  const [amount, setAmount] = useState("");
 
   return (
     <>
       <h1 className="app__title">RecipeWizard</h1>
       <SearchBar setInput={setInput} />
-      <AmountInput />
+      <AmountInput setAmount={setAmount} />
       <Toggle />
-      <Table filter={input} />
+      <Table filter={input} amount={amount} />
     </>
   );
 }
