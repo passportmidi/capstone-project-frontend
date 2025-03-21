@@ -10,7 +10,7 @@ export default function Table({ filter, amount, selected }) {
 
   useEffect(() => {
     fetchIngredients();
-  }, [filter, amount]);
+  }, [filter, amount, selected]);
 
   async function fetchIngredients() {
     try {
@@ -19,9 +19,10 @@ export default function Table({ filter, amount, selected }) {
         ingredient.name.toLowerCase().includes(filter.toLowerCase())
       );
       if (amount) {
-        filteredData.forEach((ingredient) => (ingredient.grams = amount));
+        if (selected === "grams") {
+          filteredData.forEach((ingredient) => (ingredient.grams = amount));
+        }
       }
-      // TODO: maybe add function to filter on volume/weight here
       setIngredients(filteredData);
     } catch (e) {
       console.log("Error fetching ingredients:", e);

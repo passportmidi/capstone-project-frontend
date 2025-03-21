@@ -8,7 +8,6 @@ import Toggle from "./components/Toggle/Toggle";
 function App() {
   const [input, setInput] = useState("");
   const [amount, setAmount] = useState("");
-  // default state of radio buttons has cups selected
   const [selected, setSelected] = useState("");
 
   return (
