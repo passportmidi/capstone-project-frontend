@@ -13,6 +13,18 @@ export default function Table({ filter, amount, selected }) {
     fetchIngredients();
   }, [filter, amount, selected]);
 
+  function handleVolume(vol, unit) {
+    if (unit.startsWith("cup")) {
+      if (vol === "1") {
+        return " cup";
+      } else {
+        return " cups";
+      }
+    } else {
+      return " " + unit;
+    }
+  }
+
   async function fetchIngredients() {
     try {
       const { data } = await axios.get(`${BASE_URL}/ingredients`);
@@ -22,12 +34,17 @@ export default function Table({ filter, amount, selected }) {
       if (amount) {
         if (selected === "grams") {
           filteredData.forEach((ingredient) => {
-            const orig = ingredient.grams; // original gram value
-            const volumeArr = ingredient.volume.split(" ");
-            const volume = new Fraction(volumeArr[0]).mul(amount / orig);
+            let orig = ingredient.grams; // original gram value
+            let volumeArr = ingredient.volume.split(" ");
+            let frac = volumeArr[0];
+            let unit = volumeArr[1];
+            let volume = new Fraction(frac)
+              .mul(amount / orig)
+              .toFraction(true)
+              .trimEnd();
 
             ingredient.grams = amount;
-            ingredient.volume = volume.toFraction(true); // show mixed fraction
+            ingredient.volume = volume + handleVolume(volume, unit); // show mixed fraction
           });
         }
       }

@@ -6,7 +6,7 @@ export default function AmountInput({ setAmount }) {
         <input
           className="amount__input"
           placeholder="Enter amount"
-          onChange={(e) => setAmount(e.target.value)}
+          onChange={(e) => setAmount(e.target.value.trimEnd())}
         />
       </label>
     </div>
