@@ -2,6 +2,7 @@ import editIcon from "../../assets/images/ic--baseline-edit.svg";
 import deleteIcon from "../../assets/images/ic--baseline-delete.svg";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Fraction from "fraction.js";
 
 const BASE_URL = import.meta.env.VITE_API_URL;
 
@@ -20,7 +21,14 @@ export default function Table({ filter, amount, selected }) {
       );
       if (amount) {
         if (selected === "grams") {
-          filteredData.forEach((ingredient) => (ingredient.grams = amount));
+          filteredData.forEach((ingredient) => {
+            const orig = ingredient.grams; // original gram value
+            const volumeArr = ingredient.volume.split(" ");
+            const volume = new Fraction(volumeArr[0]).mul(amount / orig);
+
+            ingredient.grams = amount;
+            ingredient.volume = volume.toFraction(true); // show mixed fraction
+          });
         }
       }
       setIngredients(filteredData);
