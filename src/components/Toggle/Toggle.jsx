@@ -1,16 +1,7 @@
 import "./Toggle.scss";
 
-export default function Toggle() {
+export default function Toggle({ setSelected }) {
   return (
-    // <div className="toggle">
-    //   <input
-    //     label="Cups"
-    //     type="radio"
-    //     className="toggle__input"
-    //     defaultChecked
-    //   />
-    //   <input label="Grams" type="radio" className="toggle__input" />
-    // </div>
     <div className="toggle">
       <input
         className="toggle__input"
@@ -18,6 +9,9 @@ export default function Toggle() {
         type="radio"
         name="unit"
         value="cups"
+        onChange={(e) => {
+          setSelected(e.target.value);
+        }}
         defaultChecked
       />
       <input
@@ -26,6 +20,9 @@ export default function Toggle() {
         type="radio"
         name="unit"
         value="grams"
+        onChange={(e) => {
+          setSelected(e.target.value);
+        }}
       />
     </div>
   );

@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 const BASE_URL = import.meta.env.VITE_API_URL;
 
-export default function Table({ filter, amount }) {
+export default function Table({ filter, amount, selected }) {
   const [ingredients, setIngredients] = useState(null);
 
   useEffect(() => {
@@ -19,9 +19,7 @@ export default function Table({ filter, amount }) {
         ingredient.name.toLowerCase().includes(filter.toLowerCase())
       );
       if (amount) {
-        filteredData.forEach(
-          (ingredient) => (ingredient.grams = ingredient.grams * amount)
-        );
+        filteredData.forEach((ingredient) => (ingredient.grams = amount));
       }
       // TODO: maybe add function to filter on volume/weight here
       setIngredients(filteredData);
@@ -42,7 +40,7 @@ export default function Table({ filter, amount }) {
             Ingredient<button>+ Add custom ingredient</button>
           </th>
           <th>Volume</th>
-          <th>Weight {amount}</th>
+          <th>Weight</th>
         </tr>
       </thead>
       <tbody>

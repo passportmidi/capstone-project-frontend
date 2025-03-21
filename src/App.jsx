@@ -8,14 +8,17 @@ import Toggle from "./components/Toggle/Toggle";
 function App() {
   const [input, setInput] = useState("");
   const [amount, setAmount] = useState("");
+  // default state of radio buttons has cups selected
+  const [selected, setSelected] = useState("");
 
   return (
     <>
       <h1 className="app__title">RecipeWizard</h1>
+      <p>Selected value: {selected}</p>
       <SearchBar setInput={setInput} />
       <AmountInput setAmount={setAmount} />
-      <Toggle />
-      <Table filter={input} amount={amount} />
+      <Toggle setSelected={setSelected} />
+      <Table filter={input} amount={amount} selected={selected} />
     </>
   );
 }
