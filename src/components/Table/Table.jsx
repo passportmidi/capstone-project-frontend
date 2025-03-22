@@ -1,9 +1,9 @@
-import editIcon from "../../assets/images/ic--baseline-edit.svg";
 import deleteIcon from "../../assets/images/ic--baseline-delete.svg";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Fraction from "fraction.js";
 import AddPortal from "../AddPortal/AddPortal";
+import EditPortal from "../EditPortal/EditPortal";
 
 const BASE_URL = import.meta.env.VITE_API_URL;
 
@@ -111,7 +111,7 @@ export default function Table({ filter, amount, selected }) {
                 {/* if it's a custom ingredient, add edit and delete buttons */}
                 {ingredient.custom === 1 && (
                   <>
-                    <img src={editIcon} alt="Edit" />
+                    <EditPortal />
                     <img src={deleteIcon} alt="Delete" />
                   </>
                 )}
