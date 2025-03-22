@@ -5,7 +5,7 @@ export default function Toggle({ setSelected }) {
     <div className="toggle">
       <input
         className="toggle__input"
-        label="Cups"
+        label="Volume"
         type="radio"
         name="unit"
         value="cups"
@@ -16,7 +16,7 @@ export default function Toggle({ setSelected }) {
       />
       <input
         className="toggle__input"
-        label="Grams"
+        label="Weight"
         type="radio"
         name="unit"
         value="grams"

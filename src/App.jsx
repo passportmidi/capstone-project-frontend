@@ -13,7 +13,6 @@ function App() {
   return (
     <>
       <h1 className="app__title">RecipeWizard</h1>
-      <p>Selected value: {selected}</p>
       <SearchBar setInput={setInput} />
       <AmountInput setAmount={setAmount} />
       <Toggle setSelected={setSelected} />

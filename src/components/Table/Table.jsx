@@ -15,10 +15,22 @@ export default function Table({ filter, amount, selected }) {
 
   function handleVolume(vol, unit) {
     if (unit.startsWith("cup")) {
-      if (vol === "1") {
-        return " cup";
+      if (vol.includes("/")) {
+        // if a fraction
+        if (vol.includes(" ")) {
+          // if a mixed fraction
+          return " cups";
+        } else {
+          // if a proper fraction
+          return " cup";
+        }
       } else {
-        return " cups";
+        // if a whole number
+        if (vol === "1") {
+          return " cup";
+        } else {
+          return " cups";
+        }
       }
     } else {
       return " " + unit;
@@ -32,21 +44,38 @@ export default function Table({ filter, amount, selected }) {
         ingredient.name.toLowerCase().includes(filter.toLowerCase())
       );
       if (amount) {
-        if (selected === "grams") {
-          filteredData.forEach((ingredient) => {
+        filteredData.forEach((ingredient) => {
+          // split volume into fraction and unit
+          let volumeArr = ingredient.volume.split(" ");
+          let frac = volumeArr[0];
+          let unit = volumeArr[1];
+
+          if (selected === "grams") {
             let orig = ingredient.grams; // original gram value
-            let volumeArr = ingredient.volume.split(" ");
-            let frac = volumeArr[0];
-            let unit = volumeArr[1];
+            // parse original volume value as a fraction
             let volume = new Fraction(frac)
               .mul(amount / orig)
               .toFraction(true)
               .trimEnd();
 
+            // update grams based on user input
             ingredient.grams = amount;
-            ingredient.volume = volume + handleVolume(volume, unit); // show mixed fraction
-          });
-        }
+            // show calculated volume as mixed fraction
+            ingredient.volume = volume + handleVolume(volume, unit);
+          } else if (selected === "cups") {
+            // store original volume value as a fraction
+            let orig = new Fraction(frac);
+            // store user input as a fraction and a fraction string
+            let input = new Fraction(amount);
+            let inputString = input.toFraction(true).trimEnd();
+            // calculate grams equivalent to user-input volume amount
+            ingredient.grams = Math.ceil(
+              input.div(orig).mul(ingredient.grams).valueOf()
+            );
+            // update volume based on user input
+            ingredient.volume = inputString + handleVolume(inputString, unit);
+          }
+        });
       }
       setIngredients(filteredData);
     } catch (e) {
