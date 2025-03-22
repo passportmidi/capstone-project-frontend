@@ -3,6 +3,7 @@ import deleteIcon from "../../assets/images/ic--baseline-delete.svg";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Fraction from "fraction.js";
+import Portal from "../Portal/Portal";
 
 const BASE_URL = import.meta.env.VITE_API_URL;
 
@@ -93,7 +94,8 @@ export default function Table({ filter, amount, selected }) {
       <thead>
         <tr>
           <th>
-            Ingredient<button>+ Add custom ingredient</button>
+            Ingredient
+            <Portal />
           </th>
           <th>Volume</th>
           <th>Weight</th>

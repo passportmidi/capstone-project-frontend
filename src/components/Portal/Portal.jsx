@@ -7,7 +7,7 @@ export default function Portal() {
   return (
     <>
       <button onClick={() => setShowModal(true)}>
-        Show modal using a portal
+        + Add custom ingredient
       </button>
       {showModal &&
         createPortal(

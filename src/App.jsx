@@ -14,9 +14,6 @@ function App() {
   return (
     <>
       <h1 className="app__title">RecipeWizard</h1>
-      <div className="portal">
-        <Portal />
-      </div>
       <SearchBar setInput={setInput} />
       <AmountInput setAmount={setAmount} />
       <Toggle setSelected={setSelected} />
