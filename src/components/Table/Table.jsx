@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Fraction from "fraction.js";
 import AddPortal from "../AddPortal/AddPortal";
 import EditPortal from "../EditPortal/EditPortal";
+import DeletePortal from "../DeletePortal/DeletePortal";
 
 const BASE_URL = import.meta.env.VITE_API_URL;
 
@@ -112,7 +113,7 @@ export default function Table({ filter, amount, selected }) {
                 {ingredient.custom === 1 && (
                   <>
                     <EditPortal />
-                    <img src={deleteIcon} alt="Delete" />
+                    <DeletePortal />
                   </>
                 )}
               </td>

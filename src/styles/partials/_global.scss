@@ -37,3 +37,8 @@ input:not([type="radio"]) {
   left: calc(50% - 125px);
   bottom: 70px;
 }
+
+.icon,
+button {
+  cursor: pointer;
+}

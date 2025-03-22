@@ -1,21 +1,21 @@
 import { useState } from "react";
 import { createPortal } from "react-dom";
-import EditModal from "../EditModal/EditModal";
-import editIcon from "../../assets/images/ic--baseline-edit.svg";
+import DeleteModal from "../DeleteModal/DeleteModal";
+import deleteIcon from "../../assets/images/ic--baseline-delete.svg";
 
-export default function EditPortal() {
+export default function DeletePortal() {
   const [showModal, setShowModal] = useState(false);
   return (
     <>
       <img
         className="icon"
-        src={editIcon}
-        alt="Edit"
+        src={deleteIcon}
+        alt="Delete"
         onClick={() => setShowModal(true)}
       />
       {showModal &&
         createPortal(
-          <EditModal onClose={() => setShowModal(false)} />,
+          <DeleteModal onClose={() => setShowModal(false)} />,
           document.body
         )}
     </>
