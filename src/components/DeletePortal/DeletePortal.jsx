@@ -15,7 +15,7 @@ export default function DeletePortal() {
       />
       {showModal &&
         createPortal(
-          <DeleteModal onClose={() => setShowModal(false)} />,
+          <DeleteModal onCloseFunction={() => setShowModal(false)} />,
           document.body
         )}
     </>

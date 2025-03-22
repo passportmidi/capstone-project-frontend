@@ -15,7 +15,7 @@ export default function EditPortal() {
       />
       {showModal &&
         createPortal(
-          <EditModal onClose={() => setShowModal(false)} />,
+          <EditModal onCloseFunction={() => setShowModal(false)} />,
           document.body
         )}
     </>

@@ -1,23 +1,53 @@
-export default function AddModal({ onClose }) {
+import axios from "axios";
+import { useState } from "react";
+
+export default function AddModal({ onCloseFunction }) {
+  const [values, setValues] = useState({
+    name: "",
+    volume: "",
+    grams: "",
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setValues({ ...values, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_API_URL}/ingredients`,
+        values
+      );
+      onCloseFunction();
+    } catch (e) {
+      console.error("Error creating ingredient", error);
+    }
+  };
   return (
     <div className="modal">
       <h2>Add Ingredient</h2>
       <label>
         Ingredient name:
-        <input />
+        <input name="name" value={values.name} onChange={handleInputChange} />
       </label>
       <label>
         Volume:
-        <input />
+        <input
+          name="volume"
+          value={values.volume}
+          onChange={handleInputChange}
+        />
         cups
       </label>
       <label>
         Weight:
-        <input />
+        <input name="grams" value={values.grams} onChange={handleInputChange} />
         grams
       </label>
-      <button onClick={onClose}>Submit</button>
-      <button onClick={onClose}>Cancel</button>
+      <button onClick={handleSubmit}>Submit</button>
+      <button onClick={onCloseFunction}>Cancel</button>
     </div>
   );
 }

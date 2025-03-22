@@ -96,7 +96,7 @@ export default function Table({ filter, amount, selected }) {
         <tr>
           <th>
             Ingredient
-            <AddPortal />
+            <AddPortal refresh={() => fetchIngredients()} />
           </th>
           <th>Volume</th>
           <th>Weight</th>

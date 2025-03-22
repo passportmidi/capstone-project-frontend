@@ -1,8 +1,8 @@
-export default function EditModal({ onClose }) {
+export default function EditModal({ onCloseFunction }) {
   return (
     <div className="modal">
       <div>I'm a modal dialog, but for editing this time</div>
-      <button onClick={onClose}>Close</button>
+      <button onClick={onCloseFunction}>Close</button>
     </div>
   );
 }

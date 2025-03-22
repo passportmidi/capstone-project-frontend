@@ -2,7 +2,7 @@ import { useState } from "react";
 import { createPortal } from "react-dom";
 import AddModal from "../AddModal/AddModal";
 
-export default function AddPortal() {
+export default function AddPortal({ refresh }) {
   const [showModal, setShowModal] = useState(false);
   return (
     <>
@@ -11,7 +11,12 @@ export default function AddPortal() {
       </button>
       {showModal &&
         createPortal(
-          <AddModal onClose={() => setShowModal(false)} />,
+          <AddModal
+            onCloseFunction={() => {
+              setShowModal(false);
+              refresh();
+            }}
+          />,
           document.body
         )}
     </>
