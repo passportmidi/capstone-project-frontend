@@ -13,16 +13,6 @@ input:not([type="radio"]) {
   border-bottom: 1px solid black;
 }
 
-.clipping-container {
-  position: relative;
-  border: 1px solid #aaa;
-  margin-bottom: 12px;
-  padding: 12px;
-  width: 250px;
-  height: 80px;
-  overflow: hidden;
-}
-
 .modal {
   display: flex;
   justify-content: space-evenly;
@@ -31,11 +21,11 @@ input:not([type="radio"]) {
   background-color: white;
   border: 2px solid rgb(240, 240, 240);
   border-radius: 12px;
-  position: absolute;
+  position: fixed;
   width: 250px;
-  top: 70px;
+  height: 120px;
+  top: calc(50% - 60px);
   left: calc(50% - 125px);
-  bottom: 70px;
 }
 
 .icon,
