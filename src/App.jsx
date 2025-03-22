@@ -4,7 +4,7 @@ import Table from "./components/Table/Table";
 import SearchBar from "./components/SearchBar/SearchBar";
 import AmountInput from "./components/AmountInput/AmountInput";
 import Toggle from "./components/Toggle/Toggle";
-import Portal from "./components/Portal/Portal";
+import AddPortal from "./components/AddPortal/AddPortal";
 
 function App() {
   const [input, setInput] = useState("");
