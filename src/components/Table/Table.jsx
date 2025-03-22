@@ -55,6 +55,7 @@ export default function Table({ filter, amount, selected }) {
             // parse original volume value as a fraction
             let volume = new Fraction(frac)
               .mul(amount / orig)
+              .roundTo("1/8")
               .toFraction(true)
               .trimEnd();
 
