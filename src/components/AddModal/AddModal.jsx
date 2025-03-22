@@ -38,8 +38,8 @@ export default function AddModal({ onCloseFunction }) {
           name="volume"
           value={values.volume}
           onChange={handleInputChange}
+          placeholder="e.g. 1 1/2 cups, 2 tbsp"
         />
-        cups
       </label>
       <label>
         Weight:

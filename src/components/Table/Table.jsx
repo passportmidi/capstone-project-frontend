@@ -47,8 +47,8 @@ export default function Table({ filter, amount, selected }) {
       );
       if (amount) {
         filteredData.forEach((ingredient) => {
-          // split volume into fraction and unit
-          let volumeArr = ingredient.volume.split(" ");
+          // split volume into fraction and unit (split on last space in string)
+          let volumeArr = ingredient.volume.split(/\s+(?!.+ )/);
           let frac = volumeArr[0];
           let unit = volumeArr[1];
 
@@ -60,7 +60,6 @@ export default function Table({ filter, amount, selected }) {
               .roundTo("1/8")
               .toFraction(true)
               .trimEnd();
-
             // update grams based on user input
             ingredient.grams = amount;
             // show calculated volume as mixed fraction
