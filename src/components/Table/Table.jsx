@@ -42,11 +42,15 @@ export default function Table({ filter, amount, selected }) {
   async function fetchIngredients() {
     try {
       const { data } = await axios.get(`${BASE_URL}/ingredients`);
-      const filteredData = data.filter((ingredient) =>
-        ingredient.name.toLowerCase().includes(filter.toLowerCase())
-      );
+      let filteredData = data;
+      if (filter) {
+        filteredData = data.filter((ingredient) =>
+          ingredient.name.toLowerCase().includes(filter.toLowerCase())
+        );
+      }
       if (amount) {
         filteredData.forEach((ingredient) => {
+          console.log(ingredient);
           // split volume into fraction and unit (split on last space in string)
           let volumeArr = ingredient.volume.split(/\s+(?!.+ )/);
           let frac = volumeArr[0];
@@ -107,11 +111,11 @@ export default function Table({ filter, amount, selected }) {
           return (
             <tr className="table__row" key={ingredient.id}>
               <td className="table__data">
-                <div class="table__name-data">
+                <div className="table__name-data">
                   {ingredient.name}
                   {/* if it's a custom ingredient, add edit and delete buttons */}
                   {ingredient.custom === 1 && (
-                    <div class="table__name-icons">
+                    <div className="table__name-icons">
                       <EditPortal
                         id={ingredient.id}
                         refresh={() => fetchIngredients()}
