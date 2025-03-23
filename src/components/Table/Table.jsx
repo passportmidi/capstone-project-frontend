@@ -50,7 +50,6 @@ export default function Table({ filter, amount, selected }) {
       }
       if (amount) {
         filteredData.forEach((ingredient) => {
-          console.log(ingredient);
           // split volume into fraction and unit (split on last space in string)
           let volumeArr = ingredient.volume.split(/\s+(?!.+ )/);
           let frac = volumeArr[0];

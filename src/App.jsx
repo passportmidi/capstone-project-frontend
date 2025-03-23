@@ -9,7 +9,7 @@ import wizardImg from "./assets/images/wizard.png";
 function App() {
   const [input, setInput] = useState("");
   const [amount, setAmount] = useState("");
-  const [selected, setSelected] = useState("");
+  const [selected, setSelected] = useState("cups");
 
   return (
     <>
