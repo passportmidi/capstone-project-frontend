@@ -72,4 +72,8 @@ label {
   color: $darkgreen;
   border: 1px solid $green;
   padding: 2px 4px;
+  &:hover {
+    background-color: $brightgreen;
+    border: 1px solid $darkgreen;
+  }
 }
