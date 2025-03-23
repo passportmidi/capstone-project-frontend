@@ -4,6 +4,7 @@ import Fraction from "fraction.js";
 import AddPortal from "../AddPortal/AddPortal";
 import EditPortal from "../EditPortal/EditPortal";
 import DeletePortal from "../DeletePortal/DeletePortal";
+import "./Table.scss";
 
 const BASE_URL = import.meta.env.VITE_API_URL;
 
@@ -89,23 +90,23 @@ export default function Table({ filter, amount, selected }) {
   }
 
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>
+    <table className="table">
+      <thead className="table__header">
+        <tr className="table__row">
+          <th className="table__heading table__heading--ingredient">
             Ingredient
             <AddPortal refresh={() => fetchIngredients()} />
           </th>
-          <th>Volume</th>
-          <th>Weight</th>
+          <th className="table__heading">Volume</th>
+          <th className="table__heading">Weight</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody className="table__body">
         {/* map ingredients from database to table */}
         {ingredients.map((ingredient) => {
           return (
-            <tr key={ingredient.id}>
-              <td>
+            <tr className="table__row" key={ingredient.id}>
+              <td className="table__data">
                 {ingredient.name}
                 {/* if it's a custom ingredient, add edit and delete buttons */}
                 {ingredient.custom === 1 && (
@@ -121,8 +122,8 @@ export default function Table({ filter, amount, selected }) {
                   </>
                 )}
               </td>
-              <td>{ingredient.volume}</td>
-              <td>{ingredient.grams}g</td>
+              <td className="table__data">{ingredient.volume}</td>
+              <td className="table__data">{ingredient.grams}g</td>
             </tr>
           );
         })}

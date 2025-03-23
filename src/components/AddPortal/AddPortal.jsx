@@ -6,7 +6,7 @@ export default function AddPortal({ refresh }) {
   const [showModal, setShowModal] = useState(false);
   return (
     <>
-      <button onClick={() => setShowModal(true)}>
+      <button className="btn" onClick={() => setShowModal(true)}>
         + Add custom ingredient
       </button>
       {showModal &&

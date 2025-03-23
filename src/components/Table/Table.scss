@@ -1,0 +1,24 @@
+@use "../../styles/partials/colours" as *;
+@use "../../styles/partials/typography" as *;
+
+.table {
+  text-align: left;
+  border: 1px solid $softpurple;
+  border-collapse: collapse;
+
+  &__heading,
+  &__data {
+    border: 1px solid $softpurple;
+    padding: 12px;
+  }
+
+  &__heading {
+    background-color: $periwinkle;
+    @include hind-bold;
+    &--ingredient {
+      display: flex;
+      gap: 8px;
+      border: none;
+    }
+  }
+}

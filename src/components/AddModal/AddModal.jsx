@@ -46,8 +46,12 @@ export default function AddModal({ onCloseFunction }) {
         <input name="grams" value={values.grams} onChange={handleInputChange} />
         grams
       </label>
-      <button onClick={handleSubmit}>Submit</button>
-      <button onClick={onCloseFunction}>Cancel</button>
+      <button className="btn" onClick={handleSubmit}>
+        Submit
+      </button>
+      <button className="btn" onClick={onCloseFunction}>
+        Cancel
+      </button>
     </div>
   );
 }
