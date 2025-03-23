@@ -1,6 +1,28 @@
 @use "./styles/partials/typography" as *;
 @use "./styles/partials/global" as *;
+@use "./styles/partials/colours" as *;
+@use "./styles/partials/mixins" as *;
 
 .app__title {
-  @include cardo-regular;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  flex-wrap: wrap;
+  &-image {
+    filter: drop-shadow(1px 1px 1.5px #545454);
+    width: 150px;
+    @include tablet-desktop {
+      width: 200px;
+    }
+  }
+  &-text {
+    @include cardo-regular;
+    text-align: center;
+    overflow-wrap: break-word;
+    font-size: 45px;
+    @include tablet-desktop {
+      font-size: 64px;
+    }
+  }
 }

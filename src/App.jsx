@@ -4,7 +4,7 @@ import Table from "./components/Table/Table";
 import SearchBar from "./components/SearchBar/SearchBar";
 import AmountInput from "./components/AmountInput/AmountInput";
 import Toggle from "./components/Toggle/Toggle";
-import AddPortal from "./components/AddPortal/AddPortal";
+import wizardImg from "./assets/images/wizard.png";
 
 function App() {
   const [input, setInput] = useState("");
@@ -13,7 +13,18 @@ function App() {
 
   return (
     <>
-      <h1 className="app__title">RecipeWizard</h1>
+      <div className="app__title">
+        <img
+          className="app__title-image"
+          src={wizardImg}
+          alt="A wizard cooking in a cauldron"
+        ></img>
+        <h1 className="app__title-text">
+          Recipe
+          <wbr />
+          Wizard
+        </h1>
+      </div>
       <SearchBar setInput={setInput} />
       <AmountInput setAmount={setAmount} />
       <Toggle setSelected={setSelected} />

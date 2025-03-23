@@ -1,5 +1,6 @@
 @use "./../../styles/partials/global" as *;
 @use "./../../styles/partials/colours" as *;
+@use "./../../styles/partials/typography" as *;
 
 .toggle__input {
   -webkit-appearance: none;
@@ -12,6 +13,7 @@
   color: $darkslateblue;
   font-size: 14px;
   transition: all 100ms linear;
+  @include hind-semibold;
   &:checked {
     background-color: $darkslateblue;
     color: $periwinkle;
