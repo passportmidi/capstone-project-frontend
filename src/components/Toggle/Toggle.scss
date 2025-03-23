@@ -1,4 +1,5 @@
 @use "./../../styles/partials/global" as *;
+@use "./../../styles/partials/colours" as *;
 
 .toggle__input {
   -webkit-appearance: none;
@@ -7,13 +8,13 @@
   outline: none;
   cursor: pointer;
   padding: 4px 8px;
-  background: white;
-  color: black;
+  background: $periwinkle;
+  color: $darkslateblue;
   font-size: 14px;
   transition: all 100ms linear;
   &:checked {
-    background-color: black;
-    color: white;
+    background-color: $darkslateblue;
+    color: $periwinkle;
   }
   &:before {
     content: attr(label);
