@@ -5,6 +5,8 @@
   text-align: left;
   border: 1px solid $softpurple;
   border-collapse: collapse;
+  margin: auto;
+  min-width: 80%;
 
   &__heading,
   &__data {
@@ -15,8 +17,10 @@
   &__heading {
     background-color: $periwinkle;
     @include hind-bold;
+    vertical-align: top;
     &--ingredient {
       display: flex;
+      flex-wrap: wrap;
       gap: 8px;
       border: none;
     }
