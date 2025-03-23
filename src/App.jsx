@@ -25,10 +25,14 @@ function App() {
           Wizard
         </h1>
       </div>
-      <SearchBar setInput={setInput} />
-      <AmountInput setAmount={setAmount} />
-      <Toggle setSelected={setSelected} />
-      <Table filter={input} amount={amount} selected={selected} />
+      <div className="app__container">
+        <div className="app__controls">
+          <SearchBar setInput={setInput} />
+          <AmountInput setAmount={setAmount} />
+          <Toggle setSelected={setSelected} />
+        </div>
+        <Table filter={input} amount={amount} selected={selected} />
+      </div>
     </>
   );
 }

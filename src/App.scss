@@ -3,26 +3,43 @@
 @use "./styles/partials/colours" as *;
 @use "./styles/partials/mixins" as *;
 
-.app__title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  flex-wrap: wrap;
-  &-image {
-    filter: drop-shadow(1px 1px 1.5px #545454);
-    width: 150px;
-    @include tablet-desktop {
-      width: 200px;
+.app {
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    flex-wrap: wrap;
+    &-image {
+      filter: drop-shadow(1px 1px 1.5px #545454);
+      width: 150px;
+      @include tablet-desktop {
+        width: 200px;
+      }
+    }
+    &-text {
+      @include cardo-regular;
+      text-align: center;
+      overflow-wrap: break-word;
+      font-size: 45px;
+      @include tablet-desktop {
+        font-size: 64px;
+      }
     }
   }
-  &-text {
-    @include cardo-regular;
-    text-align: center;
-    overflow-wrap: break-word;
-    font-size: 45px;
-    @include tablet-desktop {
-      font-size: 64px;
-    }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    padding: 16px 0px 10px 0px;
   }
 }
