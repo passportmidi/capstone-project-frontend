@@ -40,6 +40,26 @@ label {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  &__label {
+    flex: 0;
+  }
+  &__input {
+    padding: 0 2px;
+    flex: 1;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 14px;
+  }
+  &__buttons {
+    display: flex;
+    gap: 20px;
+  }
+  &--delete {
+    height: 150px;
+    width: 400px;
+  }
 }
 
 .icon,

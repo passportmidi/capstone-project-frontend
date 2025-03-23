@@ -13,14 +13,16 @@ export default function DeleteModal({ onCloseFunction, id }) {
   };
 
   return (
-    <div className="modal">
+    <div className="modal modal--delete">
       <div>Are you sure you want to delete this ingredient?</div>
-      <button className="btn" onClick={handleDelete}>
-        Yes, delete it
-      </button>
-      <button className="btn" onClick={onCloseFunction}>
-        No, cancel
-      </button>
+      <div className="modal__buttons">
+        <button className="btn" onClick={handleDelete}>
+          Yes, delete it
+        </button>
+        <button className="btn" onClick={onCloseFunction}>
+          No, cancel
+        </button>
+      </div>
     </div>
   );
 }
