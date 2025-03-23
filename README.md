@@ -1,10 +1,10 @@
-# Project Title
+# RecipeWizard
 
 ## Overview
 
 <!-- What is your app? Give a brief description in a couple of sentences. -->
 
-Ingredient Weight Calculator (name subject to change) is an application that allows bakers to convert between cups and grams quickly and easily when measuring ingredients.
+RecipeWizard is an application that allows bakers to convert between cups and grams quickly and easily when measuring ingredients.
 
 ### Problem Space
 
@@ -51,7 +51,7 @@ This app was inspired by an issue I had while baking. I use the Ingredient Weigh
 
 <!-- List any external sources of data that will be used in your app. -->
 
-- No external APIs will be used for the first sprint
+- No external APIs used
 
 ### Sitemap
 
@@ -88,19 +88,7 @@ A single table like the one shown in the mockup. Includes five fields: ID, ingre
 
 Parameters: none
 
-Response:
-
-```
-[
-    {
-        "id": 1,
-        "name": "All-Purpose Flour",
-        "volume": "1 cup",
-        "grams": 120,
-        "custom": false
-    }
-]
-```
+Response: All ingredients
 
 **POST /ingredients**
 
@@ -126,7 +114,7 @@ Response:
 ]
 ```
 
-**PUT /ingredients/:id**
+**PATCH /ingredients/:id**
 
 - Edit an ingredient
 
@@ -146,6 +134,26 @@ Response:
         "volume": "1 cup",
         "grams": 150,
         "custom": true
+    }
+]
+```
+
+**GET /ingredients/:id**
+
+- Get a single ingredient
+
+Parameters: none
+
+Response:
+
+```
+[
+    {
+        "id": 1,
+        "name": "All-Purpose Flour",
+        "volume": "1 cup",
+        "grams": 120,
+        "custom": false
     }
 ]
 ```
@@ -176,17 +184,17 @@ Response: 200 OK
 
 - Feature: Search by ingredient ✓
 
-- Feature: Enter grams
+- Feature: Enter grams ✓
 
-- Feature: Enter decimal cups
+- Feature: Enter decimal cups ✓
 
-- Feature: Enter cups as a fraction
+- Feature: Enter cups as a fraction ✓
 
-- Feature: Add custom ingredient
+- Feature: Add custom ingredient ✓
 
-- Feature: Edit custom ingredient
+- Feature: Edit custom ingredient ✓
 
-- Feature: Delete custom ingredient
+- Feature: Delete custom ingredient ✓
 
 - Bug fixes
 
@@ -198,3 +206,23 @@ Response: 200 OK
 
 - Dark mode
 - Images of ingredients
+- Cups/tablespoons/teaspoons conversions
+- Input validation
+
+## How to Install
+
+### Frontend
+
+- Clone this repo and open it in your terminal
+- Run `npm install` to install the project
+- Create a .env file in the project directory (see the included .env.sample file for an example)
+- Run `npm run dev` and open the link provided in the terminal, e.g. http://localhost:5173
+
+### Backend
+
+- Clone the [backend repo](https://github.com/passportmidi/capstone-project-backend) and open it in your terminal
+- Run `npm install` to install the project
+- Create a .env file in the project directory (see the included .env.sample file for an example)
+- Make sure MySQL is installed on your computer before running the following step
+- Run `npx knex migrate:latest` and `npx knex seed:run` to create and populate the project database on your computer
+- Run `npm start` to start the backend API server
