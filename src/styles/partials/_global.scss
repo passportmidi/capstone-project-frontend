@@ -29,23 +29,26 @@ label {
 .modal {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
   background-color: $periwinkle;
   border: 1px solid $softpurple;
   position: fixed;
-  width: 500px;
-  height: 350px;
+  padding: 20px 20px 30px 20px;
+  min-height: 280px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  row-gap: 20px;
   &__label {
     flex: 0;
+    flex-wrap: wrap;
   }
   &__input {
     padding: 0 2px;
     flex: 1;
+    flex-wrap: wrap;
   }
   &__form {
     display: flex;
@@ -57,8 +60,8 @@ label {
     gap: 20px;
   }
   &--delete {
-    height: 150px;
-    width: 400px;
+    min-height: 120px;
+    max-width: 400px;
   }
 }
 
