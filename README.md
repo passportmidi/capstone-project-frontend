@@ -209,7 +209,7 @@ Response: 200 OK
 - Cups/tablespoons/teaspoons conversions
 - Input validation
 
-## How to Install
+## Installation Instructions
 
 ### Frontend
 
