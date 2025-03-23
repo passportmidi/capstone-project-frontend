@@ -41,8 +41,8 @@ This app was inspired by an issue I had while baking. I use the Ingredient Weigh
 - Express
 - Client libraries:
   - react
-  - react-router
   - axios
+  - fraction.js
 - Server libraries:
   - knex
   - express
