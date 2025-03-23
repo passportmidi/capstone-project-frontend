@@ -16,7 +16,7 @@ body {
 input:not([type="radio"]) {
   border: none;
   outline: 0;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid $darkgrey;
   background-color: $snow;
 }
 
@@ -63,6 +63,11 @@ label {
     min-height: 120px;
     max-width: 400px;
   }
+}
+
+.icon {
+  filter: invert(65%) sepia(19%) saturate(546%) hue-rotate(77deg)
+    brightness(94%) contrast(82%);
 }
 
 .icon,

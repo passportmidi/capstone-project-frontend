@@ -107,20 +107,22 @@ export default function Table({ filter, amount, selected }) {
           return (
             <tr className="table__row" key={ingredient.id}>
               <td className="table__data">
-                {ingredient.name}
-                {/* if it's a custom ingredient, add edit and delete buttons */}
-                {ingredient.custom === 1 && (
-                  <>
-                    <EditPortal
-                      id={ingredient.id}
-                      refresh={() => fetchIngredients()}
-                    />
-                    <DeletePortal
-                      id={ingredient.id}
-                      refresh={() => fetchIngredients()}
-                    />
-                  </>
-                )}
+                <div class="table__name-data">
+                  {ingredient.name}
+                  {/* if it's a custom ingredient, add edit and delete buttons */}
+                  {ingredient.custom === 1 && (
+                    <div class="table__name-icons">
+                      <EditPortal
+                        id={ingredient.id}
+                        refresh={() => fetchIngredients()}
+                      />
+                      <DeletePortal
+                        id={ingredient.id}
+                        refresh={() => fetchIngredients()}
+                      />
+                    </div>
+                  )}
+                </div>
               </td>
               <td className="table__data">{ingredient.volume}</td>
               <td className="table__data">{ingredient.grams}g</td>

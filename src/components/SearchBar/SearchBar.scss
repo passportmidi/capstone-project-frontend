@@ -1,7 +1,9 @@
 @use "./../../styles/partials/global" as *;
+@use "./../../styles/partials/colours" as *;
+
 .search__input {
-    background-image: url("../../assets/images/ic--baseline-search.svg");
-    background-repeat: no-repeat;
-    background-position: right center;
-    width: 10rem;
+  background-image: url("../../assets/images/material-symbols--search-rounded.svg");
+  background-repeat: no-repeat;
+  background-position: right center;
+  width: 10rem;
 }
