@@ -1,4 +1,3 @@
-import deleteIcon from "../../assets/images/ic--baseline-delete.svg";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Fraction from "fraction.js";
@@ -111,7 +110,10 @@ export default function Table({ filter, amount, selected }) {
                 {/* if it's a custom ingredient, add edit and delete buttons */}
                 {ingredient.custom === 1 && (
                   <>
-                    <EditPortal />
+                    <EditPortal
+                      id={ingredient.id}
+                      refresh={() => fetchIngredients()}
+                    />
                     <DeletePortal
                       id={ingredient.id}
                       refresh={() => fetchIngredients()}

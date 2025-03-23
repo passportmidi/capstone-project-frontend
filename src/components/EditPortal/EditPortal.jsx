@@ -3,7 +3,7 @@ import { createPortal } from "react-dom";
 import EditModal from "../EditModal/EditModal";
 import editIcon from "../../assets/images/ic--baseline-edit.svg";
 
-export default function EditPortal() {
+export default function EditPortal({ refresh, id }) {
   const [showModal, setShowModal] = useState(false);
   return (
     <>
@@ -15,7 +15,13 @@ export default function EditPortal() {
       />
       {showModal &&
         createPortal(
-          <EditModal onCloseFunction={() => setShowModal(false)} />,
+          <EditModal
+            onCloseFunction={() => {
+              setShowModal(false);
+              refresh();
+            }}
+            id={id}
+          />,
           document.body
         )}
     </>

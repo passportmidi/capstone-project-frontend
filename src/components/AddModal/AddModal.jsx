@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useState } from "react";
 
+const BASE_URL = import.meta.env.VITE_API_URL;
+
 export default function AddModal({ onCloseFunction }) {
   const [values, setValues] = useState({
     name: "",
@@ -14,12 +16,10 @@ export default function AddModal({ onCloseFunction }) {
   };
 
   const handleSubmit = async (e) => {
+    console.log(values);
     e.preventDefault();
     try {
-      const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/ingredients`,
-        values
-      );
+      const response = await axios.post(`${BASE_URL}/ingredients`, values);
       onCloseFunction();
     } catch (e) {
       console.error("Error creating ingredient:", e);
