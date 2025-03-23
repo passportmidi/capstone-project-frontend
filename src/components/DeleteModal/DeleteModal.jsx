@@ -1,8 +1,22 @@
-export default function EditModal({ onCloseFunction }) {
+import axios from "axios";
+
+export default function DeleteModal({ onCloseFunction, id }) {
+  const handleDelete = async (e) => {
+    try {
+      const response = await axios.delete(
+        `${import.meta.env.VITE_API_URL}/ingredients/${id}`
+      );
+      onCloseFunction();
+    } catch (e) {
+      console.error("Error deleting ingredient:", e);
+    }
+  };
+
   return (
     <div className="modal">
-      <div>I'm a modal dialog for deleting :^)</div>
-      <button onClick={onCloseFunction}>Close</button>
+      <div>Are you sure you want to delete this ingredient?</div>
+      <button onClick={handleDelete}>Yes, delete it</button>
+      <button onClick={onCloseFunction}>No, cancel</button>
     </div>
   );
 }

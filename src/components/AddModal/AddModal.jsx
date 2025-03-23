@@ -22,7 +22,7 @@ export default function AddModal({ onCloseFunction }) {
       );
       onCloseFunction();
     } catch (e) {
-      console.error("Error creating ingredient", error);
+      console.error("Error creating ingredient:", e);
     }
   };
   return (

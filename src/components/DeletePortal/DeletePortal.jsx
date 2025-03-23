@@ -3,7 +3,7 @@ import { createPortal } from "react-dom";
 import DeleteModal from "../DeleteModal/DeleteModal";
 import deleteIcon from "../../assets/images/ic--baseline-delete.svg";
 
-export default function DeletePortal() {
+export default function DeletePortal({ refresh, id }) {
   const [showModal, setShowModal] = useState(false);
   return (
     <>
@@ -15,7 +15,13 @@ export default function DeletePortal() {
       />
       {showModal &&
         createPortal(
-          <DeleteModal onCloseFunction={() => setShowModal(false)} />,
+          <DeleteModal
+            onCloseFunction={() => {
+              setShowModal(false);
+              refresh();
+            }}
+            id={id}
+          />,
           document.body
         )}
     </>

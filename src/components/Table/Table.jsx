@@ -112,7 +112,10 @@ export default function Table({ filter, amount, selected }) {
                 {ingredient.custom === 1 && (
                   <>
                     <EditPortal />
-                    <DeletePortal />
+                    <DeletePortal
+                      id={ingredient.id}
+                      refresh={() => fetchIngredients()}
+                    />
                   </>
                 )}
               </td>
