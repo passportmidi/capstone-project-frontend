@@ -6,6 +6,8 @@
 
 RecipeWizard is an application that allows bakers to convert between cups and grams quickly and easily when measuring ingredients.
 
+![](wizard.png)
+
 ### Problem Space
 
 <!-- Why is your app needed? Give any background information around any pain points or other reasons. -->
