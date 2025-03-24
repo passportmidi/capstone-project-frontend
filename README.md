@@ -196,7 +196,7 @@ Response: 200 OK
 
 - Feature: Delete custom ingredient ✓
 
-- Bug fixes
+- Bug fixes ✓
 
 - DEMO DAY
 
