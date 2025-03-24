@@ -28,7 +28,7 @@ function App() {
       <div className="app__container">
         <div className="app__controls">
           <SearchBar setInput={setInput} />
-          <AmountInput setAmount={setAmount} />
+          <AmountInput setAmount={setAmount} selected={selected} />
           <Toggle setSelected={setSelected} />
         </div>
         <Table filter={input} amount={amount} selected={selected} />
